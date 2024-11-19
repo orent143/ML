@@ -132,9 +132,18 @@ input[type="submit"]:hover {
 }
 
 /* Table styling */
-table {
-    width: 80%;
+
+.table-container {
+    width: 80%; /* or adjust to your design */
+    max-height: 400px; /* Set a max height for the scroll area */
+    overflow-y: auto;  /* Enable vertical scrolling */
     margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional for a little shadow effect */
+    border-radius: 20px; /* Optional for rounded corners */
+}
+table {
+    width: 100%;
+
     border-collapse: collapse;
     border-radius: 20px;
     margin-bottom: 30px;

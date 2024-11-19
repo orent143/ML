@@ -36,34 +36,38 @@
         {% endwith %}
 
         <!-- Display employee predictions in table -->
-        {% if employees %}
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Linear Salary (PHP)</th>
-                    <th>Naive Bayes Salary Category</th>
-                    <th>Decision Tree Salary (PHP)</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for employee in employees %}
-                <tr>
-                    <td>{{ employee.id }}</td>
-                    <td>{{ employee.name }}</td>
-                    <td>{{ employee.position }}</td>
-                    <td>{{ employee.linear_salary_php }} PHP</td>
-                    <td>{{ employee.nb_salary_category }}</td>  <!-- This will show only 'Low', 'Medium', 'High', or 'Very High' -->
-                    <td>{{ employee.dt_salary_php }} PHP</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% else %}
-        <p>No employee data available.</p>
-        {% endif %}
+       <!-- Display employee predictions in table -->
+{% if employees %}
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Linear Salary (PHP)</th>
+                <th>Naive Bayes Salary Category</th>
+                <th>Decision Tree Salary (PHP)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.linear_salary_php }} PHP</td>
+                <td>{{ employee.nb_salary_category }}</td>  <!-- This will show only 'Low', 'Medium', 'High', or 'Very High' -->
+                <td>{{ employee.dt_salary_php }} PHP</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>No employee data available.</p>
+{% endif %}
+
     </div>
 </div>
 
