@@ -1,0 +1,213 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    color: #333;
+}
+
+/* Main app container */
+.app-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Main content area */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Align text in the center */
+}
+
+/* Header styling */
+h1 {
+    color: #1d1d1d;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Form styling */
+/* Form styling (already present) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between form elements */
+    width: 100%;
+    max-width: 600px; /* Ensures the form does not stretch too wide */
+    align-items: center; /* Centers the children (inputs and submit button) horizontally */
+}
+
+/* Label styling (already present) */
+label {
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Input & Select field styling (already present) */
+select, input[type="number"], input[type="text"] {
+    padding: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 90%;  /* Adjusted width for a cleaner look */
+    box-sizing: border-box;
+}
+
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #008cff;
+    color: white;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%; /* Keeps the width of the submit button at 50% of the form width */
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Ensures that the submit button is centered horizontally */
+}
+
+input[type="submit"]:hover {
+    background-color: #008cffb4;
+}
+
+/* Prediction result styling */
+.result h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0089c9;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.flash-messages {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flash-messages li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    select, input[type="number"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

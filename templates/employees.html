@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SahodMO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Finance</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict">Salary Prediction</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="/employees">Employees</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <h1>Employee Salary Predictions</h1>
+
+        <!-- Flash message display -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Display employee predictions in table -->
+        {% if employees %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Linear Salary (PHP)</th>
+                    <th>Naive Bayes Salary Category</th>
+                    <th>Decision Tree Salary (PHP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.linear_salary_php }} PHP</td>
+                    <td>{{ employee.nb_salary_category }}</td>  <!-- This will show only 'Low', 'Medium', 'High', or 'Very High' -->
+                    <td>{{ employee.dt_salary_php }} PHP</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No employee data available.</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
